@@ -1,0 +1,29 @@
+﻿<Window x:Class="SavaMonitor.TeacherPrompts.AddStudentPrompt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SavaMonitor.TeacherPrompts"
+        mc:Ignorable="d"
+        Title="Add a new computer to classroom" Height="400" Width="400" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="NoResize">
+    <Grid>
+        <Grid x:Name="WaitingGrid" Visibility="Visible" Margin="32, 0, 32, 0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Waiting for join requests..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="0, 0, 0, 0"/>
+                <TextBlock Text="If you haven't already, please configure the student computer." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Regular" Margin="0, 0, 0, 0" TextWrapping="Wrap" TextAlignment="Center"/>
+                <ProgressBar HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="24" Margin="0, 8, 0, 0" IsIndeterminate="True"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="PairingGrid" Visibility="Collapsed">
+            <TextBlock Text="Enter the 4 digits on the screen" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="0, 0, 0, 64"/>
+            <TextBox x:Name="PairingNumberTextBox" Margin="32, 8, 32, 0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="160" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" TextChanged="PairingNumberTextBox_TextChanged" KeyDown="PairingNumberTextBox_KeyDown"/>
+            <Button x:Name="ConfirmNumberButton" Content="OK" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48,4" Margin="0, 84, 0, 0" Click="ConfirmNumberButton_Click"/>
+            <Button x:Name="DeclineButton" Content="Decline" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48,4" Margin="0, 156, 0, 0" Click="DeclineButton_Click"/>
+            <TextBlock x:Name="StudentInfoText" VerticalAlignment="Bottom" Margin="32, 0, 32, 16" Text="Computer ???, ID ??? wants to join the classroom." TextWrapping="Wrap" TextAlignment="Center" FontSize="14"/>
+        </Grid>
+        <Grid x:Name="ResultsGrid" Visibility="Collapsed">
+            <TextBlock x:Name="ResultText" Text="Computer successfully added to the classroom!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="SemiBold" Margin="32, 0, 32, 48" TextWrapping="Wrap" TextAlignment="Center"/>
+            <Button x:Name="CloseButton" Content="OK" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48,4" Margin="0, 84, 0, 0" Click="CloseButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

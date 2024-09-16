@@ -1,0 +1,47 @@
+﻿<Page x:Class="SavaMonitor.FirstTimeSetupPages.StudentSetup1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SavaMonitor.FirstTimeSetupPages" xmlns:materialIcons="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="600"
+      Title="StudentSetup1">
+
+    <Grid>
+        <Label Content="Student computer setup" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="16, 16, 0, 0" FontSize="24" FontWeight="Medium"/>
+
+        <StackPanel Margin="16, 64, 16, 0">
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Left" Content="Computer name"/>
+                <TextBox x:Name="StudentNameTextBox" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4, 0, 0, 0" Width="256px" Text="Student"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Left" Content="Computer ID"/>
+                <TextBox x:Name="StudentIDTextBox" VerticalAlignment="Center" Margin="4, 0, 0, 0" HorizontalAlignment="Left" Width="256px" IsEnabled="False"/>
+                <Button x:Name="RefreshIDButton" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="6,0,0,0" Width="18" Height="18" Click="RefreshIDButton_Click">
+                    <materialIcons:MaterialIcon Kind="Refresh" Margin="0, 0, 0, 0" Foreground="Black"/>
+                </Button>
+            </StackPanel>
+            <Label Content="Classroom information" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0, 0, 0, 0" FontSize="14" FontWeight="Medium"/>
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Left" Content="ID"/>
+                <TextBox x:Name="ClassroomIDTextBox" VerticalAlignment="Center" Margin="4, 0, 0, 0" HorizontalAlignment="Left" Width="256px" Text="1"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="Port"/>
+                <TextBox x:Name="ClassroomPortTextBox" VerticalAlignment="Center" Margin="4, 0, 0, 0" HorizontalAlignment="Left" Width="256px" Text="3212"/>
+            </StackPanel>
+            <Label VerticalAlignment="Top" HorizontalAlignment="Left" Content="Unless the classroom port has been explicitly set to something else, please do not change it." Margin="0, 0, 0, 0" Foreground="#FFDA4040" FontStyle="Italic"/>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="StaticIPCheckBox" Content="Computer has static IP address assigned (speeds up connecting)" Margin="4, 0, 0, 0" Checked="StaticIPCheckBox_Checked" Unchecked="StaticIPCheckBox_Unchecked"/>
+                <TextBox x:Name="StaticIPTextBox" VerticalAlignment="Top" Margin="8,0,0,0" HorizontalAlignment="Left" MinWidth="160" IsEnabled="False"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Separator Height="10" VerticalAlignment="Bottom" Margin="16, 0, 16, 58"/>
+        <Button x:Name="NextButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="96px" Height="32px" Margin="0, 0, 16, 16" Content="Next" Click="NextButton_Click" IsDefault="True"/>
+        <Button x:Name="BackButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="96px" Height="32px" Margin="0, 0, 128, 16" Content="Back" Click="BackButton_Click" IsCancel="True"/>
+    </Grid>
+</Page>

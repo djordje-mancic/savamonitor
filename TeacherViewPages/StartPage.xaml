@@ -1,0 +1,16 @@
+﻿<Page x:Class="SavaMonitor.TeacherViewPages.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SavaMonitor.TeacherViewPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="StartPage">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" Text="Computers in this classroom will appear on this page" FontSize="32" FontWeight="SemiBold" Margin="32, 0, 32, 0" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" Text="There are currently no student computers added to this classroom. You can change that by clicking on the 'Add student computer' button in the bottom right corner." FontSize="24" FontWeight="Regular" TextWrapping="Wrap" Margin="64, 0, 64, 0" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>
